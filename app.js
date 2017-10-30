@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const config = require('./config/database')
 
 //Connect to DAtabase
-mongoose.connect(config.database);
+mongoose.connect(config.database, { useMongoClient: true });
 
 //On connection
 mongoose.connection.on('connected', () => {
@@ -25,7 +25,7 @@ const app = express();
 const users = require('./routes/users')
 
 //Port Number
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 // CORS Middleware
 app.use(cors());
@@ -36,12 +36,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Body Parse Middleware
 app.use(bodyParser.json());
 
+//Passport Midlleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
 // CORS Middleware
 app.use('/users',users);
 
 // Index Route
 app.get('/', (req, res) => {
     res.send('Invalid end');
+})
+
+app.get('*', () =>{
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 })
 
 //Start Server
