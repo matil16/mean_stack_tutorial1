@@ -1,30 +1,22 @@
 {
-  "name": "mean_stack_tutorial1",
+  "name": "meanauthapp",
   "version": "1.0.0",
-  "description": "tutorial mean stack",
+  "description": "MEAN stack authentication app",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app"
   },
-  "dependencies": {
-    "express": "*",
-     "mongoose": "*",
-      "bcryptjs": "*",
-      "cors": "*",
-      "jsonwebtoken": "*",
-      "body-parser": "*",
-      "passport": "*",
-      "passport-jwt": "*"
+  "dependencies":{
+    "express":"*",
+    "mongoose":"*",
+    "bcryptjs":"*",
+    "cors":"*",
+    "jsonwebtoken":"*",
+    "body-parser":"*",
+    "passport":"*",
+    "passport-jwt":"*"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matil16/mean_stack_tutorial1.git"
-  },
-  "author": "Macas Tilger",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/matil16/mean_stack_tutorial1/issues"
-  },
-  "homepage": "https://github.com/matil16/mean_stack_tutorial1#readme"
+  "author": "Brad Traversy",
+  "license": "ISC"
 }
