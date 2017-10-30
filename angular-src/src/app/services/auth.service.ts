@@ -52,7 +52,7 @@ export class AuthService {
   }
 
   loggedIn(){
-    return tokenNotExpired('id_token');
+    return tokenNotExpired();
   }
 
   logout(){
